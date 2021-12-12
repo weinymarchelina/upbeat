@@ -1,0 +1,141 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #fdf9f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  background-color: #fbe351;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  width: 100%;
+  padding: 0 calc(1rem + 2vw);
+}
+
+img {
+  width: calc(35% - 15vw);
+}
+
+main {
+  padding: calc(1rem + 2vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.show_btn {
+  cursor: pointer;
+  padding: calc(0.25rem + 0.5vw);
+  width: calc(4.5rem + 2vw);
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 1vw;
+  text-align: center;
+  transition: 250ms ease;
+}
+
+.show_btn:hover {
+  background-color: #fbe351;
+  color: black;
+}
+
+.piano {
+  display: flex;
+}
+
+.pack {
+  display: flex;
+}
+
+.key {
+  height: calc(var(--width) * 4.15);
+  width: var(--width);
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: calc(var(--width) / 2);
+  justify-content: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+[class*="white"] {
+  --width: calc(1rem + 2vw);
+  background-color: white;
+  border: 1px solid #333;
+  border-radius: 0 0 0.35vw 0.35vw;
+}
+
+[class*="white"].active {
+  background-color: #ccc;
+}
+
+[class*="black"] {
+  --width: calc(0.65rem + 1vw);
+  font-size: calc(1rem - 0.5vw);
+  color: white;
+  background-color: black;
+  margin-left: calc(var(--width) / -2);
+  margin-right: calc(var(--width) / -2);
+  border-radius: 0 0 0.35vw 0.35vw;
+  z-index: 2;
+}
+
+[class*="black"].active {
+  background-color: #333;
+}
+
+.flip {
+  writing-mode: vertical-rl;
+  font-size: calc(0.85rem - 0.5vw);
+  padding: 0;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 1.5vw;
+  opacity: 50%;
+  right: 0;
+  font-size: calc(0.35rem + 0.75vw);
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  img {
+    width: calc(35% - 2.5vw);
+  }
+
+  .key {
+    height: calc(var(--width) * 3.25);
+  }
+
+  [class*="white"] {
+    --width: calc(1.5rem + 2vw);
+    border-radius: 0 0 0.75vw 0.75vw;
+  }
+
+  [class*="black"] {
+    --width: calc(0.85rem + 1vw);
+    font-size: calc(0.75rem - 0.5vw);
+    border-radius: 0 0 0.5vw 0.5vw;
+  }
+}
