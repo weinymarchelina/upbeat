@@ -86,7 +86,7 @@ main {
 
 [class*="black"] {
   --width: calc(0.65rem + 1vw);
-  font-size: calc(1rem - 0.5vw);
+  font-size: calc(1rem - 0.25vw);
   color: white;
   background-color: black;
   margin-left: calc(var(--width) / -2);
